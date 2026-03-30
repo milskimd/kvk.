@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ben je voor kvk</title>
+
+<style>
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 50px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 20px;
+    margin: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#jaBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#neeBtn {
+    background-color: #999;
+    color: white;
+    position: absolute;
+}
+
+#emoji {
+    font-size: 70px;
+    margin-top: 40px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>ben je voor kortrijk?</h1>
+
+<button id="jaBtn" onclick="jaKlik()">Ja 😍</button>
+<button id="neeBtn" onclick="verplaatsNee()">Nee 😅</button>
+
+<div id="emoji"></div>
+
+<script>
+function jaKlik() {
+    document.getElementById("emoji").innerHTML = "❤️🤍";
+}
+
+function verplaatsNee() {
+    let knop = document.getElementById("neeBtn");
+
+    let x = Math.random() * (window.innerWidth - knop.offsetWidth);
+    let y = Math.random() * (window.innerHeight - knop.offsetHeight);
+
+    knop.style.left = x + "px";
+    knop.style.top = y + "px";
+
+    document.getElementById("emoji").innerHTML = "😢";
+}
+</script>
+
+</body>
+</html>
